@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+{% block main %} 
+  {% if iterable %}
+    <table>
+      {% for item in iterable %}
+      <tr>
+        <td>
+          <a href="{{ url_for('pizzas', id=item.id)}}">{{item}}</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <h1>Відсутні будь-які елементи</h1>
+  {% endif %} 
+
+
+{% endblock main %}
+
